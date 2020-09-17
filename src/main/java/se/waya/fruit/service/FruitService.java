@@ -38,6 +38,13 @@ public class FruitService {
         SearchResult searchResult2 = fruitService.searchFruitDeal(fruitDealCriteria2);
         System.out.println("Stand No: " + searchResult2.getFruitStand().getStandNo());
         System.out.println("Deal Price: " + searchResult2.getFruitDeal().getDealPrice());
+
+        System.out.println("*** Extension 2 ***");
+        System.out.println("Stand No: " + searchResult2.getFruitStand().getStandNo());
+        System.out.println("Deal Price: " + searchResult2.getFruitDeal().getDealPrice());
+        searchResult2.getFruitDeal().getFruitBaskets().forEach(
+                fruitBasket -> System.out.println("Fruit Name: " + fruitBasket.getFruitName())
+        );
     }
 
     /**
