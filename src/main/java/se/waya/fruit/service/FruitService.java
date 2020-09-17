@@ -45,6 +45,14 @@ public class FruitService {
         searchResult2.getFruitDeal().getFruitBaskets().forEach(
                 fruitBasket -> System.out.println("Fruit Name: " + fruitBasket.getFruitName())
         );
+
+        System.out.println("*** Extension 3 ***");
+        System.out.println("Stand No: " + searchResult2.getFruitStand().getStandNo());
+        System.out.println("Deal Price: " + searchResult2.getFruitDeal().getDealPrice());
+        searchResult2.getFruitDeal().getFruitBaskets().forEach(
+                fruitBasket -> System.out.println("Fruit Name: " + fruitBasket.getFruitName())
+        );
+        System.out.println("Selections: " + searchResult2.getSelections());
     }
 
     /**
@@ -62,8 +70,16 @@ public class FruitService {
         FruitStand bestDealStand = null;
         FruitDeal bestFruitDeal = null;
 
+        int selections = 0;
         for (FruitStand fruitStand : fruitStands) {
             FruitDeal fruitDeal = fruitStand.matchCriteria(fruitDealCriteria);
+            // Consider only fruit stand who have required fruits
+            if(fruitDeal == null) {
+                continue;
+            }
+
+            selections++;
+
             Double dealPrice = fruitDeal.getDealPrice();
 
             if (minimumTotalPrice.compareTo(dealPrice) > 0) {
@@ -76,7 +92,7 @@ public class FruitService {
         SearchResult searchResult = new SearchResult();
         searchResult.setFruitStand(bestDealStand);
         searchResult.setFruitDeal(bestFruitDeal);
-
+        searchResult.setSelections(selections);
         return searchResult;
     }
 

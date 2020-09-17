@@ -40,6 +40,11 @@ public class FruitStand {
             Double minimumPrice = Double.MAX_VALUE;
             for (String fruit : fruitDealCriteria.getChoiceFruits()) {
                 FruitBasket fruitBasket = fruitBasketMap.get(fruit);
+
+                if(fruitBasket == null) {
+                    continue;
+                }
+
                 if (minimumPrice.compareTo(fruitBasket.getPrice()) > 0) {
                     fruitChoice = fruitBasket;
                     minimumPrice = fruitBasket.getPrice();

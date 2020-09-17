@@ -46,6 +46,25 @@ public class FruitServiceDataProvider {
                 new FruitBasket(Fruits.PEAR, 15.0)
         ));
 
+        fruitStands.add(getFruitStand("6",
+                new FruitBasket(Fruits.CHERRY, 26.0),
+                new FruitBasket(Fruits.PEAR, 15.0)
+        ));
+
+        fruitStands.add(getFruitStand("7",
+                new FruitBasket(Fruits.PEACH, 38.0),
+                new FruitBasket(Fruits.PEAR, 15.0)
+        ));
+
+        fruitStands.add(getFruitStand("8",
+                new FruitBasket(Fruits.CHERRY, 26.0),
+                new FruitBasket(Fruits.PEACH, 37.0)
+        ));
+
+        fruitStands.add(getFruitStand("9",
+                new FruitBasket(Fruits.PEAR, 15.0)
+        ));
+
         return fruitStands;
     }
 
