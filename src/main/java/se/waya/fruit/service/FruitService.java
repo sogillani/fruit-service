@@ -15,6 +15,8 @@ import java.util.List;
  */
 public class FruitService {
 
+    FruitServiceDataProvider dataProvider = new FruitServiceDataProvider();
+
     public static void main(String[] args) {
 
         FruitService fruitService = new FruitService();
@@ -53,6 +55,15 @@ public class FruitService {
                 fruitBasket -> System.out.println("Fruit Name: " + fruitBasket.getFruitName())
         );
         System.out.println("Selections: " + searchResult2.getSelections());
+
+        System.out.println("*** Extension 4 ***");
+        SearchResult searchResult3 = fruitService.searchFruitDeal(fruitDealCriteria2);
+        System.out.println("Stand No: " + searchResult3.getFruitStand().getStandNo());
+        System.out.println("Deal Price: " + searchResult3.getFruitDeal().getDealPrice());
+        searchResult3.getFruitDeal().getFruitBaskets().forEach(
+                fruitBasket -> System.out.println("Fruit Name: " + fruitBasket.getFruitName())
+        );
+        System.out.println("Selections: " + searchResult3.getSelections());
     }
 
     /**
@@ -63,7 +74,6 @@ public class FruitService {
      */
     public SearchResult searchFruitDeal(FruitDealCriteria fruitDealCriteria) {
 
-        FruitServiceDataProvider dataProvider = new FruitServiceDataProvider();
         List<FruitStand> fruitStands = dataProvider.getFruitStandsList();
 
         Double minimumTotalPrice = Double.MAX_VALUE;
@@ -88,7 +98,7 @@ public class FruitService {
                  bestFruitDeal = fruitDeal;
             }
         }
-
+        bestDealStand.setSold(true);
         SearchResult searchResult = new SearchResult();
         searchResult.setFruitStand(bestDealStand);
         searchResult.setFruitDeal(bestFruitDeal);

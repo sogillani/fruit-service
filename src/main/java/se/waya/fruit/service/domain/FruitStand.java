@@ -8,6 +8,7 @@ import java.util.Map;
 public class FruitStand {
     private String standNo;
     private Map<String, FruitBasket> fruitBasketMap;
+    private Boolean sold = false;
 
     public FruitStand(String standNo) {
         this.standNo = standNo;
@@ -22,7 +23,20 @@ public class FruitStand {
         return fruitBasketMap;
     }
 
+    public Boolean getSold() {
+        return sold;
+    }
+
+    public void setSold(Boolean sold) {
+        this.sold = sold;
+    }
+
     public FruitDeal matchCriteria(FruitDealCriteria fruitDealCriteria) {
+
+        if (sold) {
+            return null;
+        }
+
         FruitDeal fruitDeal = new FruitDeal();
         for (String fruit : fruitDealCriteria.getDesiredFruits()) {
 

@@ -13,8 +13,14 @@ import java.util.List;
  */
 public class FruitServiceDataProvider {
 
+    private List<FruitStand> fruitStands = null;
     public List<FruitStand> getFruitStandsList() {
-        List<FruitStand> fruitStands = new ArrayList<FruitStand>();
+
+        if(fruitStands != null) {
+            return fruitStands;
+        }
+
+        fruitStands = new ArrayList<>();
 
         fruitStands.add(getFruitStand("1",
                 new FruitBasket(Fruits.CHERRY, 20.0),
