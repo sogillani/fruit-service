@@ -28,19 +28,19 @@ public class FruitServiceDataProvider {
                 new FruitBasket(Fruits.PEAR, 15.0)
         ));
 
-        fruitStands.add(getFruitStand("1",
+        fruitStands.add(getFruitStand("3",
                 new FruitBasket(Fruits.CHERRY, 27.0),
                 new FruitBasket(Fruits.PEACH, 31.0),
                 new FruitBasket(Fruits.PEAR, 15.0)
         ));
 
-        fruitStands.add(getFruitStand("1",
+        fruitStands.add(getFruitStand("4",
                 new FruitBasket(Fruits.CHERRY, 26.0),
                 new FruitBasket(Fruits.PEACH, 37.0),
                 new FruitBasket(Fruits.PEAR, 15.0)
         ));
 
-        fruitStands.add(getFruitStand("1",
+        fruitStands.add(getFruitStand("5",
                 new FruitBasket(Fruits.CHERRY, 24.0),
                 new FruitBasket(Fruits.PEACH, 38.0),
                 new FruitBasket(Fruits.PEAR, 15.0)
