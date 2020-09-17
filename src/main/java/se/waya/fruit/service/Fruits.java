@@ -7,4 +7,5 @@ public class Fruits {
 
     public static final String CHERRY = "Cherry";
     public static final String PEACH = "Peach";
+    public static final String PEAR = "Pear";
 }

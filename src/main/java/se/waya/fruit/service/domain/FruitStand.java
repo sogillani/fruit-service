@@ -35,6 +35,24 @@ public class FruitStand {
             }
         }
 
+        if (fruitDealCriteria.getChoiceFruits().size() > 0) {
+            FruitBasket fruitChoice = null;
+            Double minimumPrice = Double.MAX_VALUE;
+            for (String fruit : fruitDealCriteria.getChoiceFruits()) {
+                FruitBasket fruitBasket = fruitBasketMap.get(fruit);
+                if (minimumPrice.compareTo(fruitBasket.getPrice()) > 0) {
+                    fruitChoice = fruitBasket;
+                    minimumPrice = fruitBasket.getPrice();
+                }
+            }
+
+            if (fruitChoice == null) {
+                return null;
+            }
+            fruitDeal.getFruitBaskets().add(fruitChoice);
+        }
+
+
         return fruitDeal;
     }
 }

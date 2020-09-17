@@ -18,14 +18,26 @@ public class FruitService {
     public static void main(String[] args) {
 
         FruitService fruitService = new FruitService();
+
+        System.out.println("*** Base Scenario ***");
         FruitDealCriteria fruitDealCriteria = new FruitDealCriteria();
 
         fruitDealCriteria.getDesiredFruits().add(Fruits.CHERRY);
         fruitDealCriteria.getDesiredFruits().add(Fruits.PEACH);
 
         SearchResult searchResult = fruitService.searchFruitDeal(fruitDealCriteria);
-        System.out.println("*** Base Scenario ***");
         System.out.println("Stand No: " + searchResult.getFruitStand().getStandNo());
+
+        System.out.println("*** Extension 1 ***");
+        FruitDealCriteria fruitDealCriteria2 = new FruitDealCriteria();
+
+        fruitDealCriteria2.getDesiredFruits().add(Fruits.PEAR);
+
+        fruitDealCriteria2.getChoiceFruits().add(Fruits.CHERRY);
+        fruitDealCriteria2.getChoiceFruits().add(Fruits.PEACH);
+        SearchResult searchResult2 = fruitService.searchFruitDeal(fruitDealCriteria2);
+        System.out.println("Stand No: " + searchResult2.getFruitStand().getStandNo());
+        System.out.println("Deal Price: " + searchResult2.getFruitDeal().getDealPrice());
     }
 
     /**
@@ -41,6 +53,7 @@ public class FruitService {
 
         Double minimumTotalPrice = Double.MAX_VALUE;
         FruitStand bestDealStand = null;
+        FruitDeal bestFruitDeal = null;
 
         for (FruitStand fruitStand : fruitStands) {
             FruitDeal fruitDeal = fruitStand.matchCriteria(fruitDealCriteria);
@@ -49,11 +62,13 @@ public class FruitService {
             if (minimumTotalPrice.compareTo(dealPrice) > 0) {
                  minimumTotalPrice = dealPrice;
                  bestDealStand = fruitStand;
+                 bestFruitDeal = fruitDeal;
             }
         }
 
         SearchResult searchResult = new SearchResult();
         searchResult.setFruitStand(bestDealStand);
+        searchResult.setFruitDeal(bestFruitDeal);
 
         return searchResult;
     }

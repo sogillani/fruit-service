@@ -18,27 +18,32 @@ public class FruitServiceDataProvider {
 
         fruitStands.add(getFruitStand("1",
                 new FruitBasket(Fruits.CHERRY, 20.0),
-                new FruitBasket(Fruits.PEACH, 30.0)
+                new FruitBasket(Fruits.PEACH, 30.0),
+                new FruitBasket(Fruits.PEAR, 15.0)
         ));
 
         fruitStands.add(getFruitStand("2",
                 new FruitBasket(Fruits.CHERRY, 25.0),
-                new FruitBasket(Fruits.PEACH, 22.0)
+                new FruitBasket(Fruits.PEACH, 22.0),
+                new FruitBasket(Fruits.PEAR, 15.0)
         ));
 
         fruitStands.add(getFruitStand("1",
                 new FruitBasket(Fruits.CHERRY, 27.0),
-                new FruitBasket(Fruits.PEACH, 31.0)
+                new FruitBasket(Fruits.PEACH, 31.0),
+                new FruitBasket(Fruits.PEAR, 15.0)
         ));
 
         fruitStands.add(getFruitStand("1",
                 new FruitBasket(Fruits.CHERRY, 26.0),
-                new FruitBasket(Fruits.PEACH, 37.0)
+                new FruitBasket(Fruits.PEACH, 37.0),
+                new FruitBasket(Fruits.PEAR, 15.0)
         ));
 
         fruitStands.add(getFruitStand("1",
                 new FruitBasket(Fruits.CHERRY, 24.0),
-                new FruitBasket(Fruits.PEACH, 38.0)
+                new FruitBasket(Fruits.PEACH, 38.0),
+                new FruitBasket(Fruits.PEAR, 15.0)
         ));
 
         return fruitStands;
